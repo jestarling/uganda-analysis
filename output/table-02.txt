@@ -1,0 +1,14 @@
+% latex table generated in R 3.4.4 by xtable 1.8-3 package
+% Thu Sep 26 10:50:42 2019
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrr}
+  \hline
+ & Scenario & MSE & MSE Monotone & Percent MSE Reduction \\ 
+  \hline
+1 & Arctan & 1.03 & 1.02 & 1.20 \\ 
+  2 & Linear & 1.03 & 1.02 & 1.07 \\ 
+  3 & Sigmoid & 1.04 & 1.03 & 0.75 \\ 
+   \hline
+\end{tabular}
+\end{table}

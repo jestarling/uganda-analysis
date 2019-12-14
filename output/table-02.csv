@@ -1,0 +1,4 @@
+"","scenario","mse","mse_mono","pct_reduction"
+"1","Arctan",1.031,1.018,1.26
+"2","Linear",1.028,1.017,1.07
+"3","Sigmoid",1.039,1.031,0.77
