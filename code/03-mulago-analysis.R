@@ -97,7 +97,8 @@ ggplot(df, aes(x=bw_kg)) +
    theme_Publication()  +
    scale_x_continuous(breaks=seq(0,5,by=1)) +
    labs(x='Birth weight (kg)', y='Count')
-ggsave('./output/figure-01.pdf', width=6, height=4)
+ggsave('./output/figure-01.pdf', width=6, height=4, dpi=800)
+ggsave('./output/figure-01.tiff', width=6, height=4, dpi=800)
 
 # Investigate rough size of sig2 compared to rounding (to nearest 100 grams).
 mylm = lm(bw_kg ~ pec + gest_age28 + femaleinfant + momage + momjob + ganda + hiv +
@@ -486,7 +487,8 @@ p3 = ggplot(ggdf, aes(x=gest_age, y=pecdiff, colour=factor(id))) +
 # Put panel together and clean up plot-specific helper data frames.
 #-------------------------------------------------------------------
 plt = grid.arrange(p1, p2, p3, ncol=3)
-ggsave('./output/figure-05.pdf', plot(plt), width=9, height=3)
+ggsave('./output/figure-05.pdf', plot(plt), width=9, height=3, dpi=800)
+ggsave('./output/figure-05.tiff', plot(plt), width=9, height=3, dpi=800)
 
 rm(ggdf, p1, p2, p3, pmeans, pmeans_0, pmeans_1, ggdf_pec0, ggdf_pec1)
 
@@ -513,7 +515,8 @@ ggplot(ggdf %>% filter(pec==0), aes(x=gest_age, y=yhat_pava, colour=factor(id)))
    labs(x='Gestational age (Wks)', y='Birth weight (kg)') +
    theme_Publication()
 
-ggsave('./output/figure-06.pdf', width=8, height=4)
+ggsave('./output/figure-06.pdf', width=8, height=4, dpi=800)
+ggsave('./output/figure-06.tiff', width=8, height=4, dpi=800)
 
 rm(ggdf, idx)
 
@@ -560,11 +563,20 @@ labs = paste(c(1:8), collapse="           ")
 pdf('./output/figure-07.pdf', height=4, width=6)
    par(mfrow=c(2,1), mar=c(0,0,0,0)); layout(c(1,2), widths=c(1,1), heights=c(2,.125))
    rpart.plot(cart,type=2)
-
+   
    plot(c(0, 1), c(0, .2), ann = F, bty = 'n', type = 'n', xaxt = 'n', yaxt = 'n')
    text(x = 0.51, y = .15, labs,
         cex = 1.1, col = "black", family="sans", font=2, adj=0.5)
 dev.off()
+
+tiff('./output/figure-07.tiff', height=4, width=6, units='in', res=800)
+   par(mfrow=c(2,1), mar=c(0,0,0,0)); layout(c(1,2), widths=c(1,1), heights=c(2,.125))
+   rpart.plot(cart,type=2)
+   
+   plot(c(0, 1), c(0, .2), ann = F, bty = 'n', type = 'n', xaxt = 'n', yaxt = 'n')
+   text(x = 0.51, y = .15, labs,
+        cex = 1.1, col = "black", family="sans", font=2, adj=0.5)
+dev.off()s
 
 #======================================================================
 # Violin plots for CART model posterior exploration across tree levels.
@@ -623,7 +635,8 @@ p3
 # Add plots together to make panel.
 #---------------------------------------------------------
 plt = grid.arrange(p1, p2, p3, ncol=3)
-ggsave('./output/figure-08.pdf', plot(plt), width=10, height=4)
+ggsave('./output/figure-08.pdf', plot(plt), width=10, height=4, dpi=800)
+ggsave('./output/figure-08.tiff', plot(plt), width=10, height=4, dpi=800)
 
 
 

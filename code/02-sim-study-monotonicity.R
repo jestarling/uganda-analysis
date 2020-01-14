@@ -80,7 +80,8 @@ plt_scenarios = ggplot(dat, aes(x=t,colour=factor(x1*x2))) +
    facet_wrap(~scenario,ncol=3) +
    theme_Publication()
    
-ggsave('./output/figure-04.pdf', plot(plt_scenarios), width=9, height=4)
+   ggsave('./output/figure-04.pdf', plot(plt_scenarios), width=9, height=4, dpi=800)
+   ggsave('./output/figure-04.tiff', plot(plt_scenarios), width=9, height=4, dpi=800)
 
 
 #======================================================================

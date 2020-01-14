@@ -163,8 +163,9 @@ ggplot(df, aes(x=alpha, y=mse_ratio, linetype=smoothed, color=unif_x)) +
    coord_cartesian(ylim=c(1,2.1)) + 
    theme_Publication(legend_position='bottom', legend_direction='vertical') +
    theme(legend.key.size= unit(1, "cm"))
-
-ggsave('./output/01-sim-study-mse-inflation/mse-inflation-ratio.pdf', width=6, height=5)
+   
+ggsave('./output/figure-02.pdf', width=6, height=5, dpi=800)
+ggsave('./output/figure-02.tiff', width=6, height=5, dpi=800)
 
 
 #######################################################################
@@ -241,6 +242,7 @@ panel_b = ggplot(df %>% filter(unif_x==T, k==30), aes(x=x_grid, y=y)) +
    theme_Publication()
 
 plt = grid.arrange(panel_a, panel_b, ncol=2)
-ggsave('./output/01-sim-study-mse-inflation/mse-sim-illustration.pdf', plot(plt), height=8, width=12)
+ggsave('./output/figure-03.pdf', plot(plt), height=8, width=12, dpi=800)
+ggsave('./output/figure-03.tiff', plot(plt), height=8, width=12, dpi=800)
 
 
