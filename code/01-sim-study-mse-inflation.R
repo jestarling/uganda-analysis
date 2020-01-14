@@ -242,7 +242,7 @@ panel_b = ggplot(df %>% filter(unif_x==T, k==30), aes(x=x_grid, y=y)) +
    theme_Publication()
 
 plt = grid.arrange(panel_a, panel_b, ncol=2)
-ggsave('./output/figure-03.pdf', plot(plt), height=8, width=12, dpi=800)
-ggsave('./output/figure-03.tiff', plot(plt), height=8, width=12, dpi=800)
+ggsave('./output/figure-03.pdf', plot(plt), height=5, width=8, dpi=800)
+ggsave('./output/figure-03.tiff', plot(plt), height=5, width=8, dpi=800)
 
 
